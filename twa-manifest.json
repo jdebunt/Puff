@@ -1,90 +1,29 @@
 {
+  "packageId": "com.breathepuff.puff",
   "name": "Puff - Your Breathwork Companion",
   "display": "standalone",
   "startUrl": "/",
+  "iconUrl": "https://jdebunt.github.io/Puff/icons/puff-512.png",
   "themeColor": "#1a2e25",
   "backgroundColor": "#1a2e25",
   "navigationColor": "#1a2e25",
   "navigationColorDark": "#1a2e25",
   "navigationDividerColor": "#8FBC8F",
   "navigationDividerColorDark": "#8FBC8F",
-  "shortcutMode": false,
-  "orientation": "portrait",
-  "source": {
-    "host": "your-domain.github.io",
-    "baseDir": "/puff-breathwork",
-    "path": "/",
-    "protocol": "https"
+  "host": "jdebunt.github.io",
+  "path": "/Puff/",
+  "scheme": "https",
+  "version": {
+    "code": 2,
+    "name": "1.0.0"
   },
-  "android": {
-    "applicationId": "com.puffbreathwork.app",
-    "appName": {
-      "default": "Puff Breathwork",
-      "short": "Puff"
-    },
-    "version": {
-      "code": 1,
-      "name": "1.0.0"
-    },
-    "signing": {
-      "path": "./keystore.puff.jks",
-      "alias": "puff-alias",
-      "module": "playstore"
-    },
-    "launcherName": "Puff",
-    "isChromeOSOnly": false,
-    "isMetaQuest": false,
-    "fullScopeEnabled": false,
-    "shareTarget": {
-      "action": "/share",
-      "method": "POST",
-      "enctype": "multipart/form-data",
-      "params": {
-        "title": "title",
-        "text": "text",
-        "url": "url"
-      }
-    },
-    "additionalTrustedOrigins": [],
-    "retainedBundles": [],
-    "appVersionName": "1.0.0",
-    "appVersionCode": 1,
-    "minSdkVersion": 21,
-    "targetSdkVersion": 34,
-    "permissions": [
-      "POST_NOTIFICATIONS"
-    ],
-    "features": [
-      "Location",
-      "Notification"
-    ],
-    "webManifestUrl": "https://your-domain.github.io/puff-breathwork/manifest.json",
-    "fallbackType": "customtabs",
-    "enableNotifications": true,
-    "generateShortcuts": true,
-    "icons": {
-      "any": [
-        {
-          "src": "/icons/puff-512.png",
-          "size": "512x512"
-        }
-      ],
-      "maskable": [
-        {
-          "src": "/icons/puff-512.png",
-          "size": "512x512"
-        }
-      ]
-    },
-    "splashScreen": {
-      "backgroundColor": "#1a2e25",
-      "imageUrl": "/icons/puff-512.png",
-      "imageMaskType": "icon",
-      "imageMaskMode": "cover",
-      "fadeDuration": 200
-    },
-    "launchUrl": "/",
-    "enableSiteSettingsShortcut": true,
-    "enableZygotePreload": true
-  }
+  "signing": {
+    "path": "/Users/jpbuntinx/keystore.puff.jks",
+    "alias": "puff-alias"
+  },
+  "launcherName": "Puff",
+  "orientation": "portrait",
+  "shortcutMode": false,
+  "enableNotifications": true,
+  "webManifestUrl": "https://jdebunt.github.io/Puff/manifest.json"
 }
