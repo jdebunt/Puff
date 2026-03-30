@@ -2,20 +2,20 @@
   "name": "Puff - Morning Breathwork",
   "short_name": "Puff",
   "description": "Your mindful breathing companion. Start each day with intention before the world rushes in.",
-  "start_url": "/",
+  "start_url": "/Puff/",
   "display": "standalone",
   "background_color": "#1a2e25",
   "theme_color": "#1a2e25",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icons/puff-192.png",
+      "src": "/Puff/icons/puff-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icons/puff-512.png",
+      "src": "/Puff/icons/puff-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -30,27 +30,25 @@
       "name": "Quick Breath",
       "short_name": "Breathe",
       "description": "Start a 3-minute breathing session",
-      "url": "/?quick=breathe",
-      "icons": [{ "src": "/icons/quick-breath.png", "sizes": "96x96" }]
+      "url": "/Puff/?quick=breathe"
     },
     {
       "name": "Morning Reset",
       "short_name": "Reset",
       "description": "Start your morning reset session",
-      "url": "/?session=morning-reset",
-      "icons": [{ "src": "/icons/morning-reset.png", "sizes": "96x96" }]
+      "url": "/Puff/?session=morning-reset"
     }
   ],
   "screenshots": [
     {
-      "src": "/screenshots/home.png",
+      "src": "/Puff/screenshots/home.png",
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Choose your breathing session"
     },
     {
-      "src": "/screenshots/breathing.png",
+      "src": "/Puff/screenshots/breathing.png",
       "sizes": "1080x1920",
       "type": "image/png",
       "form_factor": "narrow",
@@ -58,7 +56,7 @@
     }
   ],
   "share_target": {
-    "action": "/share",
+    "action": "/Puff/share",
     "method": "POST",
     "enctype": "multipart/form-data",
     "params": {

@@ -1,29 +1,13 @@
 {
   "packageId": "com.breathepuff.puff",
-  "name": "Puff - Your Breathwork Companion",
-  "display": "standalone",
-  "startUrl": "/",
-  "iconUrl": "https://jdebunt.github.io/Puff/icons/puff-512.png",
-  "themeColor": "#1a2e25",
-  "backgroundColor": "#1a2e25",
-  "navigationColor": "#1a2e25",
-  "navigationColorDark": "#1a2e25",
-  "navigationDividerColor": "#8FBC8F",
-  "navigationDividerColorDark": "#8FBC8F",
   "host": "jdebunt.github.io",
-  "path": "/Puff/",
-  "scheme": "https",
-  "version": {
-    "code": 2,
-    "name": "1.0.0"
-  },
-  "signing": {
-    "path": "/Users/jpbuntinx/keystore.puff.jks",
-    "alias": "puff-alias"
-  },
+  "name": "Puff",
   "launcherName": "Puff",
-  "orientation": "portrait",
-  "shortcutMode": false,
-  "enableNotifications": true,
-  "webManifestUrl": "https://jdebunt.github.io/Puff/manifest.json"
+  "display": "standalone",
+  "themeColor": "#1A2E25",
+  "backgroundColor": "#1A2E25",
+  "startUrl": "https://jdebunt.github.io/Puff/",
+  "iconUrl": "https://jdebunt.github.io/Puff/icons/puff-512.png",
+  "appVersionName": "1.0.0",
+  "appVersionCode": 3
 }

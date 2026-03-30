@@ -1,0 +1,70 @@
+{
+  "packageId": "io.github.jdebunt.twa",
+  "host": "jdebunt.github.io",
+  "name": "Puff - Morning Breathwork",
+  "launcherName": "Puff",
+  "display": "standalone",
+  "themeColor": "#1A2E25",
+  "themeColorDark": "#000000",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#1A2E25",
+  "enableNotifications": true,
+  "startUrl": "/Puff/",
+  "iconUrl": "https://jdebunt.github.io/Puff/icons/puff-512.png",
+  "maskableIconUrl": "https://jdebunt.github.io/Puff/icons/puff-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "/Users/jpbuntinx/projects/mobile/Puff/puff-keystore.jks",
+    "alias": "puff"
+  },
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Quick Breath",
+      "shortName": "Breathe",
+      "url": "https://jdebunt.github.io/?quick=breathe",
+      "chosenIconUrl": "https://jdebunt.github.io/icons/quick-breath.png"
+    },
+    {
+      "name": "Morning Reset",
+      "shortName": "Reset",
+      "url": "https://jdebunt.github.io/?session=morning-reset",
+      "chosenIconUrl": "https://jdebunt.github.io/icons/morning-reset.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://jdebunt.github.io/Puff/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://jdebunt.github.io/Puff/",
+  "minSdkVersion": 21,
+  "shareTarget": {
+    "action": "https://jdebunt.github.io/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "orientation": "portrait",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "protocolHandlers": [],
+  "fileHandlers": [],
+  "launchHandlerClientMode": "",
+  "displayOverride": [],
+  "appVersion": "1"
+}
