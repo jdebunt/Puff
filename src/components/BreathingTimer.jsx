@@ -62,6 +62,70 @@ function BreathingTimer({ session, onComplete, onExit }) {
   const [timeLeft, setTimeLeft] = useState(session.duration * 60)
   const [isRunning, setIsRunning] = useState(true)
   const patternRef = useRef(null)
+  const audioContextRef = useRef(null)
+  const lastPhaseRef = useRef(null)
+
+  // Initialize audio context
+  useEffect(() => {
+    const settings = localStorage.getItem('appSettings')
+    const soundEnabled = settings ? JSON.parse(settings).soundEnabled : true
+    
+    if (soundEnabled && typeof window !== 'undefined') {
+      const AudioContext = window.AudioContext || window.webkitAudioContext
+      if (AudioContext) {
+        audioContextRef.current = new AudioContext()
+      }
+    }
+    
+    return () => {
+      if (audioContextRef.current) {
+        audioContextRef.current.close()
+      }
+    }
+  }, [])
+
+  // Play sound when phase changes
+  useEffect(() => {
+    const settings = localStorage.getItem('appSettings')
+    const soundEnabled = settings ? JSON.parse(settings).soundEnabled : true
+    
+    if (!soundEnabled || !audioContextRef.current || phase === lastPhaseRef.current) return
+    
+    lastPhaseRef.current = phase
+    
+    const playTone = (frequency, duration, type = 'sine') => {
+      try {
+        const ctx = audioContextRef.current
+        if (!ctx) return
+        
+        const oscillator = ctx.createOscillator()
+        const gainNode = ctx.createGain()
+        
+        oscillator.connect(gainNode)
+        gainNode.connect(ctx.destination)
+        
+        oscillator.frequency.value = frequency
+        oscillator.type = type
+        
+        gainNode.gain.setValueAtTime(0.3, ctx.currentTime)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration)
+        
+        oscillator.start(ctx.currentTime)
+        oscillator.stop(ctx.currentTime + duration)
+      } catch (e) {
+        console.error('Failed to play sound:', e)
+      }
+    }
+
+    // Different tones for different phases
+    if (phase === 'inhale') {
+      playTone(440, 0.3) // A4 - higher pitch for inhale
+    } else if (phase === 'exhale') {
+      playTone(330, 0.3) // E4 - lower pitch for exhale
+    } else if (phase === 'hold') {
+      playTone(523, 0.15) // C5 - brief high tone for hold
+    }
+  }, [phase])
 
   useEffect(() => {
     // Track session start (anonymous)

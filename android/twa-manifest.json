@@ -3,7 +3,7 @@
   "host": "jdebunt.github.io",
   "name": "Puff - Morning Breathwork",
   "launcherName": "Puff",
-  "display": "standalone",
+  "display": "fullscreen",
   "themeColor": "#1A2E25",
   "themeColorDark": "#000000",
   "navigationColor": "#000000",
@@ -20,22 +20,9 @@
     "path": "/Users/jpbuntinx/projects/mobile/Puff/puff-keystore.jks",
     "alias": "puff"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
-  "shortcuts": [
-    {
-      "name": "Quick Breath",
-      "shortName": "Breathe",
-      "url": "https://jdebunt.github.io/?quick=breathe",
-      "chosenIconUrl": "https://jdebunt.github.io/icons/quick-breath.png"
-    },
-    {
-      "name": "Morning Reset",
-      "shortName": "Reset",
-      "url": "https://jdebunt.github.io/?session=morning-reset",
-      "chosenIconUrl": "https://jdebunt.github.io/icons/morning-reset.png"
-    }
-  ],
+  "appVersionName": "2",
+  "appVersionCode": 2,
+  "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://jdebunt.github.io/Puff/manifest.json",
   "fallbackType": "customtabs",
@@ -49,7 +36,7 @@
   "fullScopeUrl": "https://jdebunt.github.io/Puff/",
   "minSdkVersion": 21,
   "shareTarget": {
-    "action": "https://jdebunt.github.io/share",
+    "action": "https://jdebunt.github.io/Puff/share",
     "method": "POST",
     "enctype": "multipart/form-data",
     "params": {
@@ -65,6 +52,8 @@
   "protocolHandlers": [],
   "fileHandlers": [],
   "launchHandlerClientMode": "",
-  "displayOverride": [],
-  "appVersion": "1"
+  "displayOverride": [
+    "fullscreen"
+  ],
+  "appVersion": "2"
 }

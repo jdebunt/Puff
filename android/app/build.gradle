@@ -39,7 +39,7 @@ def twaManifest = [
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [[name:'Quick Breath', short_name:'Breathe', url:'https://jdebunt.github.io/?quick=breathe', icon:'shortcut_0'],[name:'Morning Reset', short_name:'Reset', url:'https://jdebunt.github.io/?session=morning-reset', icon:'shortcut_1']],
+    shortcuts: [],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
@@ -86,7 +86,7 @@ android {
 
         
             // The data for the app to support web share target.
-            resValue "string", "shareTarget", '{\\"action\\":\\"https://jdebunt.github.io/share\\",\\"method\\":\\"POST\\",\\"enctype\\":\\"multipart/form-data\\",\\"params\\":{\\"title\\":\\"title\\",\\"text\\":\\"text\\",\\"url\\":\\"url\\"}}'
+            resValue "string", "shareTarget", '{\\"action\\":\\"https://jdebunt.github.io/Puff/share\\",\\"method\\":\\"POST\\",\\"enctype\\":\\"multipart/form-data\\",\\"params\\":{\\"title\\":\\"title\\",\\"text\\":\\"text\\",\\"url\\":\\"url\\"}}'
         
 
         // The hostname is used when building the intent-filter, so the TWA is able to
