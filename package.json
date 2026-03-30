@@ -1,0 +1,20 @@
+{
+  "name": "morning-breathwork",
+  "version": "1.0.0",
+  "description": "Breathwork sessions app - gate phone access behind mindful breathing exercises",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "localforage": "^1.10.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  }
+}

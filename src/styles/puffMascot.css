@@ -1,0 +1,68 @@
+/* Puff Mascot - CSS-only animated breathing cloud */
+
+.puff-cloud {
+  width: var(--puff-size, 80px);
+  height: calc(var(--puff-size) * 0.5);
+  background: linear-gradient(135deg,
+    var(--puff-color-inhale-start, #bae6fd) 0%,
+    var(--puff-color-inhale-end, #7dd3fc) 100%);
+  border-radius: calc(var(--puff-size) * 0.4);
+  position: relative;
+  animation: puff-breathe var(--puff-animation-duration, 8s) ease-in-out infinite;
+}
+
+.puff-cloud::before,
+.puff-cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: calc(var(--puff-size) * 0.3);
+  width: calc(var(--puff-size) * 0.45);
+  height: calc(var(--puff-size) * 0.45);
+}
+
+.puff-cloud::before {
+  top: calc(-1 * var(--puff-size) * 0.2);
+  left: calc(var(--puff-size) * -0.15);
+}
+
+.puff-cloud::after {
+  top: calc(-1 * var(--puff-size) * 0.2);
+  right: calc(var(--puff-size) * -0.2);
+}
+
+@keyframes puff-breathe {
+  0%, 100% { transform: scale(1); }
+  50% {
+    /* Color transitions during inhale/exhale */
+    background: linear-gradient(135deg,
+      var(--puff-color-exhale-start, #fde8e8) 0%,
+      var(--puff-color-exhale-end, #fecaca) 100%);
+    transform: scale(calc(1 + (var(--puff-scale-change, 0.12))));
+  }
+}
+
+/* Idle state - slow breathing */
+.puff-cloud--idle {
+  --puff-animation-duration: 8s;
+  --puff-scale-change: 0;
+}
+
+/* Inhale phase - faster, lighter colors */
+.puff-cloud--inhale {
+  --puff-animation-duration: 6s;
+  --puff-scale-change: 0.12;
+}
+
+/* Exhale phase - slower, warmer colors */
+.puff-cloud--exhale {
+  --puff-animation-duration: 4s;
+  --puff-scale-change: -0.02;
+}
+
+/* Responsive sizing */
+@media (max-width: 600px) {
+  .puff-cloud {
+    --puff-size: 50px;
+  }
+}
