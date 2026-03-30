@@ -1,0 +1,20 @@
+# Android build artifacts
+android/.gradle/
+android/build/
+android/app/build/
+android/app-release-*.apk
+android/app-release-*.aab
+android/app-release-*.idsig
+android/manifest-checksum.txt
+android/app/src/main/res/raw/
+android/app/src/main/res/drawable-*/ic_notification_icon.png
+android/app/src/main/res/mipmap-*/ic_maskable.png
+
+# Node modules
+node_modules/
+
+# Dist folder (keep only source)
+dist/
+
+# macOS
+.DS_Store

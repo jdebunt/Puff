@@ -13,7 +13,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#1a2e25',
-    padding: '40px 20px'
+    padding: '60px 20px 40px'
   },
   header: {
     position: 'absolute',
