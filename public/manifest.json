@@ -25,20 +25,6 @@
   "lang": "en-US",
   "dir": "ltr",
   "prefer_related_applications": false,
-  "shortcuts": [
-    {
-      "name": "Quick Breath",
-      "short_name": "Breathe",
-      "description": "Start a 3-minute breathing session",
-      "url": "/Puff/?quick=breathe"
-    },
-    {
-      "name": "Morning Reset",
-      "short_name": "Reset",
-      "description": "Start your morning reset session",
-      "url": "/Puff/?session=morning-reset"
-    }
-  ],
   "screenshots": [
     {
       "src": "/Puff/screenshots/home.png",
