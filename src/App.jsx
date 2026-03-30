@@ -45,6 +45,7 @@ function App() {
         console.error('Failed to load settings:', e)
       }
     }
+    setIsLoading(false)
   }, [])
 
   // Check if health disclaimer needs to be shown
@@ -213,6 +214,7 @@ function App() {
           onOpenPremium={() => setCurrentView(VIEWS.PREMIUM)}
           onOpenCycle={() => setCurrentView(VIEWS.CYCLE)}
           onOpenPrivacy={() => setCurrentView(VIEWS.PRIVACY)}
+          onThemeChange={setAppTheme}
         />
       )}
 

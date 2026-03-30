@@ -35,8 +35,8 @@ const styles = {
   },
   circleContainer: {
     position: 'relative',
-    width: '300px',
-    height: '300px'
+    width: '240px',
+    height: '240px'
   },
   breathingCircle: {
     borderRadius: '50%',
@@ -143,8 +143,8 @@ function BreathingTimer({ session, onComplete, onExit }) {
 
   // Calculate circle scale based on phase
   const getCircleScale = () => {
-    if (phase === 'inhale') return 1.3
-    if (phase === 'exhale') return 0.8
+    if (phase === 'inhale') return 1.15
+    if (phase === 'exhale') return 0.85
     return 1
   }
 

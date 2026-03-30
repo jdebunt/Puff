@@ -84,7 +84,7 @@ const styles = {
   }
 }
 
-function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpenPrivacy }) {
+function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpenPrivacy, onThemeChange }) {
   const [settings, setSettings] = useState({
     notificationsEnabled: true,
     soundEnabled: true,
@@ -98,7 +98,16 @@ function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpe
     // Load settings from local storage
     const stored = localStorage.getItem('appSettings')
     if (stored) {
-      setSettings(JSON.parse(stored))
+      try {
+        const parsed = JSON.parse(stored)
+        setSettings(parsed)
+        // Notify parent of theme change
+        if (parsed.theme && onThemeChange) {
+          onThemeChange(parsed.theme)
+        }
+      } catch (e) {
+        console.error('Failed to parse settings:', e)
+      }
     }
   }, [])
 
@@ -106,6 +115,18 @@ function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpe
     setSettings((prev) => {
       const newSettings = { ...prev, [key]: !prev[key] }
       localStorage.setItem('appSettings', JSON.stringify(newSettings))
+      return newSettings
+    })
+  }
+
+  const updateTheme = (themeId) => {
+    setSettings((prev) => {
+      const newSettings = { ...prev, theme: themeId }
+      localStorage.setItem('appSettings', JSON.stringify(newSettings))
+      // Notify parent of theme change
+      if (onThemeChange) {
+        onThemeChange(themeId)
+      }
       return newSettings
     })
   }
@@ -232,29 +253,6 @@ function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpe
         </div>
       </div>
 
-      <div style={styles.settingItem}>
-        <span style={styles.label}>Dark Mode</span>
-        <div
-          onClick={() => toggleSetting('darkMode')}
-          style={{
-            ...styles.toggle,
-            backgroundColor: settings.darkMode ? '#3A7D5B' : '#4A5568'
-          }}
-        >
-          <div
-            style={{
-              width: '24px',
-              height: '24px',
-              backgroundColor: '#fff',
-              borderRadius: '50%',
-              position: 'absolute',
-              left: settings.darkMode ? '22px' : '2px',
-              transition: 'left 0.3s ease'
-            }}
-          />
-        </div>
-      </div>
-
       {/* Theme Selector */}
       <div style={{ ...styles.settingItem, flexDirection: 'column', alignItems: 'stretch' }}>
         <span style={{ ...styles.label, marginBottom: '12px' }}>🎨 Background Theme</span>
@@ -268,10 +266,7 @@ function Settings({ onBack, isPremium = false, onOpenPremium, onOpenCycle, onOpe
           ].map(theme => (
             <button
               key={theme.id}
-              onClick={() => {
-                setSettings(prev => ({ ...prev, theme: theme.id }))
-                localStorage.setItem('appSettings', JSON.stringify({ ...settings, theme: theme.id }))
-              }}
+              onClick={() => updateTheme(theme.id)}
               style={{
                 flex: 1,
                 minWidth: '70px',
